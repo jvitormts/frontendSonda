@@ -7,28 +7,11 @@ app.controller('MainController', ['$scope', '$http', function($scope, $http) {
 		.then(function(response){ 
 			$scope.details = response.data;
 			$scope.loading = false;
-            console.log($scope.details);
             $scope.getDecades();
             $scope.getCurrentWeekData();
             $scope.getMarcasQtd();
 		});
 	}	
-
-    $scope.getIconClass = function(item) {
-        if(item){
-            return 'bi bi-check-circle-fill';
-        }else{
-            return 'bi bi-x-square';
-        }
-    }
-
-    $scope.getButtonClass = function(item) {
-        if(item){
-            return 'btn btn-success';
-        }else{
-            return 'btn btn-warning';
-        }
-    }
 
     $scope.selectItem = function(item) {
         $scope.selectedItem = item;
@@ -90,7 +73,7 @@ app.controller('MainController', ['$scope', '$http', function($scope, $http) {
     
     $scope.save = function(id) {
 		$scope.loading = true;
-        if($scope.myForm == undefined || !$scope.validate($scope.vm.myForm)){
+        if($scope.myForm == undefined || !$scope.validation($scope.vm.myForm)){
             alert("preencha todos os campos");
             return;
         }
@@ -109,12 +92,11 @@ app.controller('MainController', ['$scope', '$http', function($scope, $http) {
         )
 		.then(function(response){ 
 			$scope.status = response.status;
-            console.log($scope.status);
             $scope.getData();
 		});
 	}
 
-    $scope.validate = function(form) {
+    $scope.validation = function(form) {
         console.log(form.marca.$valid);
         console.log(form.nome.$valid);
         console.log(form.ano.$valid);
@@ -123,6 +105,22 @@ app.controller('MainController', ['$scope', '$http', function($scope, $http) {
             return true;
         }else {
             return false;
+        }
+    }
+
+    $scope.getIconClass = function(item) {
+        if(item){
+            return 'bi bi-check-circle-fill';
+        }else{
+            return 'bi bi-x-square';
+        }
+    }
+
+    $scope.getButtonClass = function(item) {
+        if(item){
+            return 'btn btn-success';
+        }else{
+            return 'btn btn-warning';
         }
     }
 

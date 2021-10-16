@@ -11,7 +11,7 @@
         <div ng-controller="MainController">
             <div class="container">
                 <div class="row">
-                    <h1>Desafio SONDA - FrontEnd consumindo API REST em Spring1</h1>
+                    <h1>Desafio SONDA - FrontEnd consumindo API REST em Spring</h1>
                 </div>
             </div>
             <form name="vm.myForm" ng-model="myForm">
@@ -111,9 +111,9 @@
                                 <div class="form-group container">
                                     <div class="row top-buffer">
                                         <select class="form-control" id="editMarca" name="editMarca" ng-model="editForm.marca">
-                                                <option value="Embraer">Embraer</option>
-                                                <option value="Boeing">Boeing</option>
-                                                <option value="Airbus">Airbus</option>
+                                            <option value="Airbus">Airbus</option>  
+                                            <option value="Boeing">Boeing</option>
+                                            <option value="Embraer">Embraer</option>
                                         </select>
                                     </div>
                                     <div class="row top-buffer">
@@ -135,8 +135,8 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                      <button type="button" class="btn btn-primary" ng-click="edit(selectedItem.id)">Gravar</button>
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                      <button type="button" class="btn btn-primary" ng-click="edit(selectedItem.id)">Salvar</button>
                     </div>
                   </div>
                 </div>
